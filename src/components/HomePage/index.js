@@ -17,7 +17,10 @@ function HomePage() {
     const [date, setDate] = useState();
     const [typeSelected, setTypeSelected] = useState(1);
     const [dishes, setDishes] = useState([]);
+    const [itemSelected, setItemSelected] = useState([]);
+
     const navigate = useNavigate();
+    
 
     function getCurrentDate() {
         const today = new Date();
@@ -28,12 +31,30 @@ function HomePage() {
         setDate(`${day} ${month} ${year}`);
     }
 
+    function handleList(index, type)
+    {
+        const copyArr = [...itemSelected];
+
+        if(type == "Add")
+            {
+                copyArr[index] = true;
+                setItemSelected(copyArr);
+            }
+            else
+            {
+                copyArr[index] = false;
+                setItemSelected(copyArr);
+            }
+    }
+
     async function fetchData() {
         try {
             const response = await axios.get("https://8b648f3c-b624-4ceb-9e7b-8028b7df0ad0.mock.pstmn.io/dishes/v1/");
 
 
-            const array = [...response.data.dishes, ...response.data.popularDishes]
+            const array = [...response.data.dishes, ...response.data.popularDishes];
+            const arr = new Array(array.length).fill(false);
+            setItemSelected(arr);
             setDishes(array);
         }
         catch (err) {
@@ -187,7 +208,9 @@ function HomePage() {
 
                             <div className='right-info'>
                                 <img src={items.image} alt='' />
-                                <button>Add +</button>
+                                {
+                                    itemSelected[items.id-1] ? <button onClick={() => handleList(items.id-1, "Remove")}>Remove</button> : <button onClick={() => handleList(items.id-1, "Add")}>Add +</button>
+                                }
                             </div>
                         </div>
                     ))
