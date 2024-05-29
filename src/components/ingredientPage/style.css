@@ -6,7 +6,7 @@
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
+    padding: 1rem;
 }
 
 .top {
@@ -41,7 +41,7 @@
 }
 
 .people {
-    padding-left: 1rem;
+    padding: 1rem;
 
     margin-top: 1rem;
     width: 60%;
@@ -55,7 +55,7 @@
 }
 
 .spices {
-    padding-left: 1rem;
+    padding: 1rem;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
@@ -66,7 +66,7 @@
 }
 
 .appliances {
-    padding-left: 1rem;
+    padding: 1rem;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
@@ -116,11 +116,139 @@
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 1rem;
 }
 
 .arrow
 {
     margin: 1rem;
+}
+
+
+@media (max-width: 2110px) {
+    .all-info
+    {
+        width: 70%;
+    }
+
+    .people
+    {
+        width: 70%;
+    }
+
+    .spices
+    {
+        width: 70%;
+    }
+
+    .appliances
+    {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1810px) {
+    .all-info
+    {
+        width: 80%;
+    }
+
+    .people
+    {
+        width: 80%;
+    }
+
+    .spices
+    {
+        width: 80%;
+    }
+
+    .appliances
+    {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1540px) {
+    .all-info
+    {
+        width: 90%;
+    }
+
+    .people
+    {
+        width: 90%;
+    }
+
+    .spices
+    {
+        width: 90%;
+    }
+
+    .appliances
+    {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .all-info
+    {
+        width: 100%;
+    }
+
+    .people
+    {
+        width: 100%;
+    }
+
+    .spices
+    {
+        width: 100%;
+    }
+
+    .appliances
+    {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 1200px) 
+{
+    .all-info img
+    {
+       width: 500px;
+       
+    }
+}
+
+
+
+
+@media (max-width: 900px) 
+{
+    .all-info img
+    {
+       width: 300px;
+    }
+
+    .all-info
+    {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 450px) 
+{
+    .all-info img
+    {
+       width: 200px;
+    }
+
+    .all-info
+    {
+        font-size: 8px;
+    }
 }

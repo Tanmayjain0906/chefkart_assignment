@@ -313,6 +313,29 @@ hr
     transform: scale(0.96);
 }
 
+.total-items
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  width: 400px;
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.total-items div
+{
+    display: flex;
+    gap: 0.8rem;
+}
+
 
 @media (max-width: 2110px) {
     .types

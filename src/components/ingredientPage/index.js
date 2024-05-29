@@ -115,15 +115,15 @@ function IngredientPage() {
                 data.ingredients.appliances && data.ingredients.appliances.map((item, i) => (
                   <div key={i}>
                     {
-                      item.name == "Refrigerator" && <img src={refrigerator} alt='' width="130px" />
+                      item.name == "Refrigerator" && <img src={refrigerator} alt='' width="100px" />
                     }
 
                     {
-                      item.name == "Microwave" && <img src={microwave} alt='' width="130px" />
+                      item.name == "Microwave" && <img src={microwave} alt='' width="100px" />
                     }
 
                     {
-                      item.name == "Stove" && <img src={stove} alt='' width="130px" />
+                      item.name == "Stove" && <img src={stove} alt='' width="100px" />
                     }
 
                     <p>{item.name}</p>

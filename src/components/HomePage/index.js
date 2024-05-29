@@ -11,6 +11,7 @@ import { LuRefrigerator } from "react-icons/lu";
 import { LuMicrowave } from "react-icons/lu";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
+import { IoFastFoodOutline } from "react-icons/io5";
 
 function HomePage() {
 
@@ -18,9 +19,10 @@ function HomePage() {
     const [typeSelected, setTypeSelected] = useState(1);
     const [dishes, setDishes] = useState([]);
     const [itemSelected, setItemSelected] = useState([]);
+    const [totalItemSelected, setTotalItemSelected] = useState(0);
 
     const navigate = useNavigate();
-    
+
 
     function getCurrentDate() {
         const today = new Date();
@@ -31,20 +33,26 @@ function HomePage() {
         setDate(`${day} ${month} ${year}`);
     }
 
-    function handleList(index, type)
-    {
+
+
+    function handleList(index, type) {
         const copyArr = [...itemSelected];
 
-        if(type == "Add")
-            {
-                copyArr[index] = true;
-                setItemSelected(copyArr);
+        if (type == "Add") {
+            copyArr[index] = true;
+            setItemSelected(copyArr);
+        }
+        else {
+            copyArr[index] = false;
+            setItemSelected(copyArr);
+        }
+        let count = 0;
+        for (let i = 0; i < copyArr.length; i++) {
+            if (copyArr[i]) {
+                count++;
             }
-            else
-            {
-                copyArr[index] = false;
-                setItemSelected(copyArr);
-            }
+        }
+        setTotalItemSelected(count);
     }
 
     async function fetchData() {
@@ -209,17 +217,23 @@ function HomePage() {
                             <div className='right-info'>
                                 <img src={items.image} alt='' />
                                 {
-                                    itemSelected[items.id-1] ? <button onClick={() => handleList(items.id-1, "Remove")}>Remove</button> : <button onClick={() => handleList(items.id-1, "Add")}>Add +</button>
+                                    itemSelected[items.id - 1] ? <button onClick={() => handleList(items.id - 1, "Remove")}>Remove</button> : <button onClick={() => handleList(items.id - 1, "Add")}>Add +</button>
                                 }
                             </div>
                         </div>
                     ))
                 }
-
-
-
             </div>
 
+            {
+                totalItemSelected > 0 && <div className='total-items'>
+                    <div>
+                        <IoFastFoodOutline size={20} />
+                        <p>{totalItemSelected} food Items Selected</p>
+                    </div>
+                    <FaArrowRightLong size={30} />
+                </div>
+            }
 
         </div>
     )
