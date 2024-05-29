@@ -1,0 +1,126 @@
+.all-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.top button {
+    padding: 0.2rem;
+    background-color: #51C451;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+.all-info p {
+    color: grey;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.left-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.people {
+    padding-left: 1rem;
+
+    margin-top: 1rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.people p {
+    color: grey;
+}
+
+.spices {
+    padding-left: 1rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.appliances {
+    padding-left: 1rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+}
+
+.ing-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.8rem;
+    gap: 1rem;
+}
+
+.ing-info div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.vegetables-container,
+.spices-container,
+.appliances {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.appliance
+{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.appliance div {
+    background-color: #F5F5F5;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.arrow
+{
+    margin: 1rem;
+}
